@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>jQuery按钮控制时间轴滚动代码 - 站长素材</title>
+
+<link rel="stylesheet" href="css/public.css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery_flexslider.js"></script>
+<style type="text/css">
+    .red{
+        color: red;
+    }
+    .blue{
+        color: blue;
+    }
+    .green{
+        color: green;
+    }
+</style>
+</head>
+<body>
+<div class="about-history" id="fzlc">
+    <header class="about-title title-white">
+        <h3 class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">发展历程</h3>
+        <p class="wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">HISTORY</p>
+    </header>
+    <div class="about-history-list wow zoomIn" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">        
+        <div class="flex-viewport" style="overflow: hidden; position: relative;">
+            <ul class="slides clearfix list" style="width: 2600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>2018/8/20 星期一</h3>
+                        <div class="desc">
+                            <p>
+                                <span class="green">产品</span>: 冯琛开始着手打卡小组的交互设计，并与帮主和patrick协商要改动的内容，是否是最终效果，先确定大的宗旨，再开始细化设计交互；</br>
+                                <span class="green">运营</span>: 博洋先开始有一个大概的准备工作；
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>2018/8/21 星期二</h3>
+                        <div class="desc">
+                            <p>
+                                <span class="green">产品</span>: 冯琛赶在<span class="red">17:00</span>之前交活。<br>
+                                <span class="green">测试</span>:<span class="red">17:00~18:00</span>进行查看是否通过（帮主&Patrick），并且和设计、运营、前端一起走一遍流程，方便工作<br>
+                                <span class="blue">产品工作周二结束</span>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>2018/8/22 星期三</h3>
+                        <div class="desc">
+                            <p><span class="green">设计</span>: 欢欢开始着手设计图</p>
+                            <p><span class="green">运营</span>: 博洋开始着手文案，选定好主题和推送时间，(预期是利用好国庆节)</p>
+                            <p><span class="green">后端</span>: 开始着手接口</p>
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>2018/8/23 星期四</h3>
+                        <div class="desc">
+                            <p><span class="green">设计</span>: 欢欢制作设计图</p>
+                            <p><span class="green">运营</span>: 博洋完善文案</p>
+                            <p><span class="green">后端</span>: 开始着手接口</p>
+                            下午<span class="red">17:00</span>开始检查欢欢的设计图
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>2018/8/24 星期五</h3>
+                        <div class="desc">
+                            <p><span class="green">前端</span>: 开始着手页面</p>
+                            <p><span class="green">后端</span>: 写接口</p>
+                            <p>可能设计图有微调的情况，留在周五一天时间和前端并行</p>
+                            <span class="blue">设计工作周五结束</span>
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>2018/8/25、26 星期六、七</h3>
+                        <div class="desc">
+                            <p>该加点班的加点班</p>
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>2018/8/27 星期一</h3>
+                        <div class="desc">
+                            <p><span class="green">前端</span>：开始对接口</p>
+                            <p><span class="green">运营</span>：这时应该和patrick确认文案是否通过</p>
+                            <p class="blue">后端早上交活</p>
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>2018/8/28 星期二</h3>
+                        <div class="desc">
+                            <p><span class="green">前端</span>：对接口</p>
+                            <p><span class="green">产品</span>：将已经做好的部分进行测试，记录bug</p>
+                            <p class="blue">运营交活</p>
+                            <p class="blue">前端交活，有剩余时间测bug</p>
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>2018/8/29 星期三</h3>
+                        <div class="desc">
+                            <p>工种延期安排</p>
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;">
+                    <div class="item">
+                        <h3>2018/8/30 星期四</h3>
+                        <div class="desc">
+                            <p>整体完活</p>
+                            <p>运营根据自己的时间，安排推送时间</p>
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 253px; float: left; display: block;"></li>
+            </ul>
+        </div>
+        <ul class="flex-direction-nav">
+            <li class="flex-nav-prev"><a class="flex-prev" href="#">&lt;</a></li>
+            <li class="flex-nav-next"><a class="flex-next" href="#">&gt;</a></li>
+         </ul>
+    </div>
+    <div class="swiper-container about-history-swiper hidden">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="item">
+                    <h3>2016</h3>
+                    <div class="desc">
+                        <p>公司立足于当下商业地产市场形势，优化自身资源配置，成立中正小雅，完美实现了婚庆产业链的高效整合。中正人携手并进，筑梦远航，共创辉煌！</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="item">
+                    <h3>2015</h3>
+                    <div class="desc">
+                        <p>公司进行大项目组改制，深化管理层次，确定项目组责任制与分红制，集团凝聚力更上新的台阶。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="item">
+                    <h3>2014</h3>
+                    <div class="desc">
+                        <p>公司省内外业务进入全面发展阶段，中杭、中翔、中润等项目相继组建，集团公司实现新的跨越。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="item">
+                    <h3>2013</h3>
+                    <div class="desc">
+                        <p>5月，公司相继成立策划公司、苏州分公司、无锡分公司、公司战略调整，向集团化发展，合并旗下公司成立（杭州中正商业地产管理有限公司）</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="item">
+                    <h3>2012</h3>
+                    <div class="desc">
+                        <p>全球金融危机下，公司稳步发展，全年仍创营业额达5亿</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="item">
+                    <h3>2011</h3>
+                    <div class="desc">
+                        <p>公司版图不断扩张，走出浙江省，走出长三角，相继在安徽、江苏设立分公司</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="item">
+                    <h3>2010</h3>
+                    <div class="desc">
+                        <p>织里中国童装城项目单项销售额达1.68亿。以杭州为大本营，面向浙江省，成立诸暨分公司</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination about-history-pagination"></div>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
+            //phone
+        }else{
+            //PC
+            $(".about-history-list").flexslider({animation:"slide",slideshow:false,controlNav:false,itemWidth:253,itemMargin:31,prevText:"<",nextText:">",move:1});
+        }
+    });
+</script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>
